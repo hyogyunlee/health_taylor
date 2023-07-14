@@ -368,12 +368,6 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "process",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/process-4.2.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
-    },
-    {
       "name": "qr",
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/qr-3.0.1",
       "packageUri": "lib/",
@@ -405,7 +399,7 @@
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.3.0",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -495,19 +489,19 @@
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_android-3.8.2",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_android-3.9.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "webview_flutter_platform_interface",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_platform_interface-2.3.1",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_platform_interface-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.6.2",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -519,9 +513,9 @@
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.0.0",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "health_taylor",
@@ -530,7 +524,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-07-14T01:43:22.657127Z",
+  "generated": "2023-07-14T06:04:18.592123Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-155.0.dev"
 }
