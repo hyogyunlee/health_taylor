@@ -243,61 +243,61 @@
     },
     {
       "name": "kakao_flutter_sdk",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_auth",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_auth-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_auth-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_common",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_common-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_common-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_friend",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_friend-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_friend-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_navi",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_navi-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_navi-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_share",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_share-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_share-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_story",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_story-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_story-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_talk",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_talk-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_talk-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_template",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_template-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_template-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "kakao_flutter_sdk_user",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_user-1.4.3",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/kakao_flutter_sdk_user-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -530,7 +530,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-07-13T01:36:10.713302Z",
+  "generated": "2023-07-14T01:43:22.657127Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-155.0.dev"
 }

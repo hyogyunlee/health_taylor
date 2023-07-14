@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => UserInfoScreen(
+                  builder: (context) => user_info_screen(
                     user: viewModel.user,
                     onLogout: () async {
                       await viewModel.logout();

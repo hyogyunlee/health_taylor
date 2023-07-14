@@ -1,35 +1,24 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QR_create extends StatelessWidget {
-  final String kakaoUid;
+  final String data;
 
-  QR_create({required this.kakaoUid});
+  QR_create({required this.data});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR 코드 생성기'),
+        title: Text('QR 코드'),
       ),
       body: Center(
-        child: Container(
-          color: Colors.white,
-          child: QrPainter(
-            data: kakaoUid,
-            version: QrVersions.auto,
-            eyeStyle: const QrEyeStyle(
-              eyeShape: QrEyeShape.square,
-              color: Colors.black,
-            ),
-            dataModuleStyle: const QrDataModuleStyle(
-              dataModuleShape: QrDataModuleShape.square,
-              color: Colors.black,
-            ),
-            size: 200.0,
-          ).toImage(200),
+        child: QrImageView(
+          data: data,
+          version: QrVersions.auto,
+          size: 200,
         ),
       ),
     );
   }
-}*/
+}

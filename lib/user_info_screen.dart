@@ -1,13 +1,23 @@
-// user_info_screen.dart
 import 'package:flutter/material.dart';
 import 'package:health_taylor/QR_create.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 
-class UserInfoScreen extends StatelessWidget {
+class user_info_screen extends StatelessWidget {
   final kakao.User? user;
   final VoidCallback onLogout;
 
-  UserInfoScreen({Key? key, this.user, required this.onLogout}) : super(key: key);
+  user_info_screen({Key? key, this.user, required this.onLogout}) : super(key: key);
+
+  void _onShowQRCode(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => QR_create(
+          data: user?.id.toString() ?? 'Unknown User',
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +45,10 @@ class UserInfoScreen extends StatelessWidget {
             Text(
               '연령대: ${user?.kakaoAccount?.ageRange ?? ''}',
               style: TextStyle(fontSize: 20, color: Colors.black), // 여기서 텍스트 색상을 검정색으로 설정
+            ),
+            ElevatedButton(
+              onPressed: () => _onShowQRCode(context),
+              child: const Text('QR 코드 보기'),
             ),
             ElevatedButton(
               onPressed: onLogout,
