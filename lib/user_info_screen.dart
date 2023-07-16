@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_taylor/QR_create.dart';
+import 'package:health_taylor/select.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 
 class user_info_screen extends StatelessWidget {
@@ -12,9 +13,9 @@ class user_info_screen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => QR_create(
+        builder: (context) => select(),/*QR_create(
           data: user?.id.toString() ?? 'Unknown User',
-        ),
+        ),*/
       ),
     );
   }
@@ -48,7 +49,7 @@ class user_info_screen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => _onShowQRCode(context),
-              child: const Text('QR 코드 보기'),
+              child: const Text('맛선택'),
             ),
             ElevatedButton(
               onPressed: onLogout,

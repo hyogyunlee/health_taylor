@@ -164,6 +164,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "flutter_signin_button",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_signin_button-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_spinkit",
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_spinkit-5.2.0",
       "packageUri": "lib/",
@@ -180,6 +186,12 @@
       "rootUri": "file:///C:/Users/lhg02/Flutter/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/font_awesome_flutter-9.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "google_identity_services_web",
@@ -524,7 +536,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-07-14T06:04:18.592123Z",
+  "generated": "2023-07-16T13:09:25.064899Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-155.0.dev"
 }
