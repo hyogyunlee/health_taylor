@@ -10,22 +10,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11abd48b-0693-4431-bcf5-3b15afe9b83d" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/assets/google.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/ht.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/kakao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/loading.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/loginlogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/splash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/auth/login_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/google_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/kakao_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/segment_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/google_user_info.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/home_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/onboarding_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/page1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/page2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/page3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/debug_android_application.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/9323c0dab5037dc04ae27cc477a4059a/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bottomnavigation.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/buttonview.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/firebase_auth_remote_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/kakao_login/firebase_auth_remote_data_source.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/google_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/google_login/google_login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/google_main_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/google_login/google_main_view_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/google_social_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/google_login/google_social_login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/initial.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/kakao_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/kakao_login/kakao_login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/kakao_main_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/kakao_login/kakao_main_view_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/kakao_social_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/kakao_login/kakao_social_login.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/select.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/select.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/start.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/success.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/kakao_user_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +77,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\lib\pages" />
+      <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\assets" />
       <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\lib\auth" />
       <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\lib\kakao_login" />
-      <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\lib\pages" />
       <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\lib\google_login" />
-      <recent name="C:\Users\lhg02\AndroidStudioProjects\health_taylor\functions" />
     </key>
   </component>
   <component name="RunManager">
@@ -151,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689676833935</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=".">
+      <created>1689678736620</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689678736620</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
