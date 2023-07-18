@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:health_taylor/google_login.dart';
+import 'package:health_taylor/google_main_view_model.dart';
 import 'package:health_taylor/kakao_login.dart';
-import 'package:health_taylor/main_view_model.dart';
+import 'package:health_taylor/kakao_main_view_model.dart';
+import 'package:health_taylor/select.dart';
 import 'package:health_taylor/user_info_screen.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 import 'package:firebase_core/firebase_core.dart';
@@ -45,7 +47,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final viewModel = MainViewModel(KakaoLogin());
+  final kakaoviewModel = kakao_MainViewModel(KakaoLogin());
+  final googleviewModel= google_MainViewModel(GoogleLogin());
+
 
   Future<void> uploadUserInfoToFirestore(kakao.User? user) async {
     if (user == null) return;
@@ -67,64 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
             .toString()
             .split('.')
             .last,
-        'ageRange': ageRange == 'null' ? null : ageRange, // 이 부분을 수정합니다.
+        'ageRange': ageRange == 'null' ? null : ageRange,
       });
     } catch (e) {
       print('Error adding user to Firestore: $e');
-    }
-  }
-
-  Future<void> uploadGoogleUserInfoToFirestore(User user) async {
-    // 사용자 정보를 Firestore의 'users' 컬렉션에 추가합니다.
-    try {
-      FirebaseFirestore firestore = FirebaseFirestore.instance;
-
-      await firestore.collection('users').doc(user.uid).set({
-        'displayName': user.displayName,
-        'email': user.email,
-        'photoURL': user.photoURL,
-      });
-    } catch (e) {
-      print('Error adding Google user to Firestore: $e');
-    }
-  }
-
-  Future<void> _handleGoogleSignIn() async {
-    FirebaseAuth _auth = FirebaseAuth.instance;
-    GoogleSignIn _googleSignIn = GoogleSignIn();
-
-    try {
-      final GoogleSignInAccount? googleAccount = await _googleSignIn.signIn();
-      if (googleAccount != null) {
-        final GoogleSignInAuthentication googleAuth =
-        await googleAccount.authentication;
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken,
-          idToken: googleAuth.idToken,
-        );
-
-        final UserCredential authResult =
-        await _auth.signInWithCredential(credential);
-        final User? user = authResult.user;
-
-        if (user != null) {
-          print("Google 로그인 성공: $user");
-
-          // Google 사용자 정보를 Firestore에 업로드
-          await uploadGoogleUserInfoToFirestore(user);
-
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomePage(user: user),
-            ),
-          );
-        } else {
-          print("Google 로그인 실패");
-        }
-      }
-    } catch (e) {
-      print(e);
     }
   }
 
@@ -139,17 +89,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
               onPressed: () async {
-                await viewModel.login();
-                if (viewModel.isLogined) {
-                  await uploadUserInfoToFirestore(viewModel.user); // 사용자 정보 업로드
+                await kakaoviewModel.login();
+                if (kakaoviewModel.isLogined) {
+                  await uploadUserInfoToFirestore(kakaoviewModel.user); // 사용자 정보 업로드
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
                           user_info_screen(
-                            user: viewModel.user,
+                            user: kakaoviewModel.user,
                             onLogout: () async {
-                              await viewModel.logout();
+                              await kakaoviewModel.logout();
                               Navigator.pop(context);
                             },
                           ),
@@ -162,8 +112,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SignInButton(
               Buttons.Google,
-              onPressed: () {
-                _handleGoogleSignIn();
+              onPressed: () async{
+                await googleviewModel.login();
+                if (googleviewModel.isLogined) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          HomePage(user: googleviewModel.user,
+                            onLogout: () async {
+                              await googleviewModel.logout();
+                              Navigator.pop(context);
+                            },
+                          ),
+                    ),
+                  );
+                }
               },
             ),
           ],
@@ -173,9 +137,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 class HomePage extends StatelessWidget {
-  final User user;
+  final User? user;
+  final VoidCallback onLogout;
 
-  HomePage({required this.user});
+  HomePage({required this.user, required this.onLogout});
+
+  void _onShowQRCode(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => select(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -187,11 +161,20 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("환영합니다, ${user.displayName}!"),
+            if (user?.photoURL != null)
+              Image.network(user!.photoURL!),
+            Text("환영합니다, ${user?.displayName}!"),
             SizedBox(height: 30),
-            Text("이메일: ${user.email}"),
+            Text("이메일: ${user?.email}"),
             SizedBox(height: 30),
-            Image.network(user.photoURL!),
+            ElevatedButton(
+              onPressed: () => _onShowQRCode(context),
+              child: const Text('맛선택'),
+            ),
+            ElevatedButton(
+              onPressed: onLogout,
+              child: const Text('Logout'),
+            ),
           ],
         ),
       ),

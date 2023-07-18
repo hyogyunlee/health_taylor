@@ -1,9 +1,9 @@
-import 'package:health_taylor/social_login.dart';
+import 'package:health_taylor/kakao_social_login.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_auth_remote_data_source.dart';
-class KakaoLogin implements SocialLogin {
+class KakaoLogin implements kakao_SocialLogin {
   final _firebaseAuthDataSource = FirebaseAuthRemoteDataSource();
   kakao.User? user;
 
@@ -43,7 +43,8 @@ class KakaoLogin implements SocialLogin {
         return false;
       }
     }
-  } @override
+  }
+  @override
   Future<bool> logout() async {
     try {
       await UserApi.instance.unlink();
