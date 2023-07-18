@@ -1,4 +1,4 @@
-import 'package:health_taylor/kakao_social_login.dart';
+import 'package:health_taylor/auth/kakao_login/kakao_social_login.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 import 'package:firebase_auth/firebase_auth.dart';

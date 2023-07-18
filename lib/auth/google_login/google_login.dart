@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:health_taylor/google_social_login.dart';
+import 'package:health_taylor/auth/google_login/google_social_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class GoogleLogin implements google_SocialLogin {

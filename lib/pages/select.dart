@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'qr_create.dart';
+import '../qr_create.dart';
 
 class select extends StatefulWidget {
   const select({Key? key}) : super(key: key);

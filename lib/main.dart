@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:health_taylor/google_login.dart';
-import 'package:health_taylor/google_main_view_model.dart';
-import 'package:health_taylor/kakao_login.dart';
-import 'package:health_taylor/kakao_main_view_model.dart';
-import 'package:health_taylor/select.dart';
-import 'package:health_taylor/user_info_screen.dart';
+import 'package:health_taylor/auth/google_login/google_login.dart';
+import 'package:health_taylor/auth/google_login/google_main_view_model.dart';
+import 'package:health_taylor/auth/kakao_login/kakao_login.dart';
+import 'package:health_taylor/auth/kakao_login/kakao_main_view_model.dart';
+import 'package:health_taylor/pages/select.dart';
+import 'package:health_taylor/pages/user_info_screen.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
