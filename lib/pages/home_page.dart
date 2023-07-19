@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return const Page1();
       case 1:
-        return const Page2();
+        return Page2();
       case 2:
         return const Page3();
       case 3:

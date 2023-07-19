@@ -3,19 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:health_taylor/pages/select.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart' as kakao;
 
-class user_info_screen extends StatelessWidget {
+class kakao_user_info_screen extends StatelessWidget {
   final kakao.User? user;
   final VoidCallback onLogout;
-  user_info_screen({Key? key, this.user, required this.onLogout}) : super(key: key);
-  void _onShowQRCode(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => select(),
-      ),
-    );
-  }
-  @override
+  kakao_user_info_screen({Key? key, this.user, required this.onLogout}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -53,7 +45,7 @@ class user_info_screen extends StatelessWidget {
                 style: TextStyle(fontSize: 20, color: Colors.black), // 여기서 텍스트 색상을 검정색으로 설정
               ),
               ElevatedButton(
-                onPressed: () => _onShowQRCode(context),
+                onPressed: () => select(),
                 child: const Text('맛선택'),
               ),
               ElevatedButton(

@@ -156,20 +156,17 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 80.0, vertical: 5),
-                        child: ElevatedButton(
-                          onPressed: () {  },
-                          child: googleButton(ontap: () async{
-                            await googleviewModel.login();
-                            if (googleviewModel.isLogined) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const OnBoardingPage(),
-                                ),
-                              );
-                            }
-                          }, text: '구글계정으로 로그인'),
-                        )),
+                        child: googleButton(ontap: () async{
+                          await googleviewModel.login();
+                          if (googleviewModel.isLogined) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const OnBoardingPage(),
+                              ),
+                            );
+                          }
+                        }, text: '구글계정으로 로그인')),
                     const SizedBox(
                       height: 20,
                     ),

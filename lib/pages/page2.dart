@@ -1,8 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:health_taylor/QR_create.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
-class Page2 extends StatelessWidget {
-  const Page2({super.key});
+GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
 
+Future<String?> getNickname() async {
+  String? nickname;
+  try {
+    GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    if (googleUser != null) {
+      nickname = googleUser.displayName;
+      return nickname;
+    } else {
+      nickname=(await kakao.UserApi.instance.me()) as String?;;
+    }
+  } catch (error) {
+    print("Login error: $error");
+  }
+  return '';
+}
+
+class Page2 extends StatefulWidget {
+  @override
+  State<Page2> createState() => _Page2State();
+}
+
+class _Page2State extends State<Page2> {
+
+  String nickname = '???';
+
+  @override
+  void initState() {
+    super.initState();
+    getNickname().then((value) {
+      setState(() {
+        nickname = value!;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -11,10 +47,10 @@ class Page2 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 80.0),
             child: Text(
-              '???님의 추천 보충제 포트폴리오? 입니다',
+              '$nickname님의 추천 보충제 포트폴리오? 입니다',
               style: TextStyle(
                   fontWeight: FontWeight.w700, fontSize: 20),
             ),
@@ -30,12 +66,27 @@ class Page2 extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[200]),
-                    child: Column(
-                      children: [
-                        Text('마이프로틴 아이솔레이트 초코'),
-                        Divider(thickness: 2, color: Colors.grey[500]),
-                        Text('성분? 추천이유? : ???님은 유당불내증이 있어서 블라블라'),
-                      ],
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final qrData =
+                            '단백질: 28,'
+                            '아르기닌: 13,'
+                            'BCAA: 9';
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => QR_create(data: qrData),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Text('마이프로틴 아이솔레이트 초코'),
+                          Divider(thickness: 2, color: Colors.grey[500]),
+                          Text('성분? 추천이유? : $nickname님은 유당불내증이 있어서 블라블라'),
+                          Text('단백질 28g 아르기닌 13g BCAA 9g',textAlign: TextAlign.center,),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -47,12 +98,28 @@ class Page2 extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey[200]),
-                    child: Column(
-                      children: [
-                        Text('싸이베이션 BCAA 레몬라임'),
-                        Divider(thickness: 2, color: Colors.grey[500]),
-                        Text('성분? 추천이유? : ???님은 상큼한맛을 좋아함 블라블라'),
-                      ],
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final qrData =
+                            '단백질: 23,'
+                            '아르기닌: 15,'
+                            'BCAA: 7';
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => QR_create(data: qrData),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('싸이베이션 BCAA 레몬라임'),
+                          Divider(thickness: 2, color: Colors.grey[500]),
+                          Text('성분? 추천이유? : $nickname님은 상큼한맛을 좋아함 블라블라'),
+                          Text('단백질 23g 아르기닌 5g BCAA7g',textAlign: TextAlign.center,),
+                        ],
+                      ),
                     ),
                   ),
                 ],
