@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/components/segment_button.dart';
 import 'package:health_taylor/pages/home_page.dart';
 import 'package:lottie/lottie.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class OnBoardingPage extends StatefulWidget {
 }
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
+  String nickname = '???';
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPageIndex = 0;
 
@@ -19,6 +22,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   bool Check2 = false;
   bool Check3 = false;
   bool Check4 = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getNickname().then((value) {
+      setState(() {
+        nickname = value!;
+      });
+    });
+  }
 
   void nextPage() {
     if (_currentPageIndex < 9) {
@@ -695,10 +708,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(top: 80.0),
                       child: Text(
-                        '???님이 입력하신 정보를 분석해 \n 보충제 포트폴리오를 추천해드리겠습니다',
+                        '$nickname님이 입력하신 정보를 분석해 \n 보충제 포트폴리오를 추천해드리겠습니다',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 18),
                       ),
@@ -727,10 +740,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(top: 80.0),
                       child: Text(
-                        '???님의 추천 보충제 포트폴리오? 입니다',
+                        '$nickname님의 추천 보충제 포트폴리오? 입니다',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 20),
                       ),
@@ -747,12 +760,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                 color: Colors.grey[200]),
                             child: Column(
                               children: [
-                                const SizedBox(
+                                SizedBox(
                                   height: 10,
                                 ),
                                 Text('마이프로틴 아이솔레이트 초코'),
                                 Divider(thickness: 2, color: Colors.grey[500]),
-                                Text('성분? 추천이유? : ???님은 유당불내증이 있어서 블라블라'),
+                                Text('성분? 추천이유? : $nickname님은 유당불내증이 있어서 블라블라'),
                               ],
                             ),
                           ),
@@ -767,12 +780,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                 color: Colors.grey[200]),
                             child: Column(
                               children: [
-                                const SizedBox(
+                                SizedBox(
                                   height: 10,
                                 ),
                                 Text('싸이베이션 BCAA 레몬라임'),
                                 Divider(thickness: 2, color: Colors.grey[500]),
-                                Text('성분? 추천이유? : ???님은 상큼한맛을 좋아함 블라블라'),
+                                Text('성분? 추천이유? : $nickname님은 상큼한맛을 좋아함 블라블라'),
                               ],
                             ),
                           ),
@@ -806,4 +819,22 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
     );
   }
+}
+GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
+
+Future<String?> getNickname() async {
+  String? nickname;
+  try {
+    _googleSignIn.disconnect(); // User information disconnect
+    GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    if (googleUser != null) {
+      nickname = googleUser.displayName;
+      return nickname;
+    } else {
+      nickname=(await kakao.UserApi.instance.me()) as String?;
+    }
+  } catch (error) {
+    print("Login error: $error");
+  }
+  return '';
 }

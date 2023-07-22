@@ -8,12 +8,13 @@ GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
 Future<String?> getNickname() async {
   String? nickname;
   try {
+    _googleSignIn.disconnect(); // User information disconnect
     GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
     if (googleUser != null) {
       nickname = googleUser.displayName;
       return nickname;
     } else {
-      nickname=(await kakao.UserApi.instance.me()) as String?;;
+      nickname=(await kakao.UserApi.instance.me()) as String?;
     }
   } catch (error) {
     print("Login error: $error");
@@ -39,6 +40,18 @@ class _Page2State extends State<Page2> {
       });
     });
   }
+
+  // Sign out function
+  Future<void> _signOut() async {
+    try {
+      await _googleSignIn.signOut();
+      await kakao.UserApi.instance.logout();
+      print("User successfully signed out.");
+    } catch (error) {
+      print("Sign out error: $error");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -53,6 +66,20 @@ class _Page2State extends State<Page2> {
               '$nickname님의 추천 보충제 포트폴리오? 입니다',
               style: TextStyle(
                   fontWeight: FontWeight.w700, fontSize: 20),
+            ),
+          ),
+          Center(
+            child: TextButton(
+              onPressed: _signOut,
+              child: Text(
+                "로그아웃",
+                style: TextStyle(fontSize: 16),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+                primary: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              ),
             ),
           ),
           Padding(
