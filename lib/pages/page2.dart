@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/QR_create.dart';
+import 'package:health_taylor/auth/login_page.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
 GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
@@ -8,29 +9,44 @@ GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
 Future<String?> getNickname() async {
   String? nickname;
   try {
-    _googleSignIn.disconnect(); // User information disconnect
-    GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    GoogleSignInAccount? googleUser = await _googleSignIn.signInSilently();
     if (googleUser != null) {
       nickname = googleUser.displayName;
       return nickname;
     } else {
-      nickname=(await kakao.UserApi.instance.me()) as String?;
+      final kakaoUser = await kakao.UserApi.instance.me();
+      if (kakaoUser.properties != null) {
+        nickname = kakaoUser.properties!['nickname'];
+        return nickname;
+      }
     }
   } catch (error) {
-    print("Login error: $error");
+    print("Error fetching user name: $error");
   }
   return '';
+}
+
+Future<void> _signOut() async {
+  try {
+    if (await _googleSignIn.isSignedIn()) {
+      // 사용자가 구글로 로그인한 경우
+      await _googleSignIn.signOut();
+    } else {
+      // 사용자가 카카오로 로그인한 경우
+      await kakao.UserApi.instance.logout();
+    }
+    print("User successfully signed out.");
+  } catch (error) {
+    print("Sign out error: $error");
+  }
 }
 
 class Page2 extends StatefulWidget {
   @override
   State<Page2> createState() => _Page2State();
 }
-
 class _Page2State extends State<Page2> {
-
   String nickname = '???';
-
   @override
   void initState() {
     super.initState();
@@ -41,21 +57,9 @@ class _Page2State extends State<Page2> {
     });
   }
 
-  // Sign out function
-  Future<void> _signOut() async {
-    try {
-      await _googleSignIn.signOut();
-      await kakao.UserApi.instance.logout();
-      print("User successfully signed out.");
-    } catch (error) {
-      print("Sign out error: $error");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,8 +73,16 @@ class _Page2State extends State<Page2> {
             ),
           ),
           Center(
-            child: TextButton(
-              onPressed: _signOut,
+            child: ElevatedButton(
+              onPressed: () async {
+                await _signOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
               child: Text(
                 "로그아웃",
                 style: TextStyle(fontSize: 16),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/components/segment_button.dart';
 import 'package:health_taylor/pages/home_page.dart';
 import 'package:lottie/lottie.dart';
-import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -22,16 +20,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   bool Check2 = false;
   bool Check3 = false;
   bool Check4 = false;
-
-  @override
-  void initState() {
-    super.initState();
-    getNickname().then((value) {
-      setState(() {
-        nickname = value!;
-      });
-    });
-  }
 
   void nextPage() {
     if (_currentPageIndex < 9) {
@@ -819,22 +807,4 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
     );
   }
-}
-GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
-
-Future<String?> getNickname() async {
-  String? nickname;
-  try {
-    _googleSignIn.disconnect(); // User information disconnect
-    GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-    if (googleUser != null) {
-      nickname = googleUser.displayName;
-      return nickname;
-    } else {
-      nickname=(await kakao.UserApi.instance.me()) as String?;
-    }
-  } catch (error) {
-    print("Login error: $error");
-  }
-  return '';
 }
