@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/QR_create.dart';
-import 'package:health_taylor/auth/google_login/google_login.dart';
-import 'package:health_taylor/auth/google_login/google_main_view_model.dart';
-import 'package:health_taylor/auth/kakao_login/kakao_login.dart';
-import 'package:health_taylor/auth/kakao_login/kakao_main_view_model.dart';
-import 'package:health_taylor/auth/login_page.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
 GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
