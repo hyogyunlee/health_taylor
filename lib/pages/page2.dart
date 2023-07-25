@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/QR_create.dart';
+import 'package:health_taylor/auth/login_page.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
 GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['profile']);
+
+Future<void> signOut() async {
+  try {
+    await _googleSignIn.signOut();
+    await kakao.UserApi.instance.logout();
+  } catch (error) {
+    print("Error signing out: $error");
+  }
+}
 
 Future<String?> getNickname() async {
   String? nickname;
@@ -56,6 +66,18 @@ class _Page2State extends State<Page2> {
                   fontWeight: FontWeight.w700, fontSize: 20),
             ),
           ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(),
+                ),
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Center(
@@ -73,7 +95,7 @@ class _Page2State extends State<Page2> {
                             '단백질: 28,'
                             '아르기닌: 13,'
                             'BCAA: 9';
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => QR_create(data: qrData),
@@ -105,7 +127,7 @@ class _Page2State extends State<Page2> {
                             '단백질: 23,'
                             '아르기닌: 15,'
                             'BCAA: 7';
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => QR_create(data: qrData),
