@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_taylor/QR_create.dart';
+import 'package:health_taylor/auth/google_login/google_login.dart';
+import 'package:health_taylor/auth/google_login/google_main_view_model.dart';
+import 'package:health_taylor/auth/kakao_login/kakao_login.dart';
+import 'package:health_taylor/auth/kakao_login/kakao_main_view_model.dart';
 import 'package:health_taylor/auth/login_page.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart' as kakao;
 
@@ -24,21 +28,6 @@ Future<String?> getNickname() async {
     print("Error fetching user name: $error");
   }
   return '';
-}
-
-Future<void> _signOut() async {
-  try {
-    if (await _googleSignIn.isSignedIn()) {
-      // 사용자가 구글로 로그인한 경우
-      await _googleSignIn.signOut();
-    } else {
-      // 사용자가 카카오로 로그인한 경우
-      await kakao.UserApi.instance.logout();
-    }
-    print("User successfully signed out.");
-  } catch (error) {
-    print("Sign out error: $error");
-  }
 }
 
 class Page2 extends StatefulWidget {
@@ -70,28 +59,6 @@ class _Page2State extends State<Page2> {
               '$nickname님의 추천 보충제 포트폴리오? 입니다',
               style: TextStyle(
                   fontWeight: FontWeight.w700, fontSize: 20),
-            ),
-          ),
-          Center(
-            child: ElevatedButton(
-              onPressed: () async {
-                await _signOut();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
-              },
-              child: Text(
-                "로그아웃",
-                style: TextStyle(fontSize: 16),
-              ),
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-                primary: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              ),
             ),
           ),
           Padding(

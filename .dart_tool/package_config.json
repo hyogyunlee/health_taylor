@@ -182,12 +182,6 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "flutter_signin_button",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_signin_button-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_spinkit",
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_spinkit-5.2.0",
       "packageUri": "lib/",
@@ -204,12 +198,6 @@
       "rootUri": "file:///C:/Users/lhg02/Flutter/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.0"
-    },
-    {
-      "name": "font_awesome_flutter",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/font_awesome_flutter-9.2.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "google_identity_services_web",
@@ -357,7 +345,7 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.15",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -370,6 +358,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -417,15 +411,21 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.5",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "pointycastle",
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/pointycastle-3.7.3",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "qr",
@@ -501,15 +501,15 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.0",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.1",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "string_scanner",
@@ -525,9 +525,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.5.2",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "typed_data",
@@ -546,6 +546,12 @@
       "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "web",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.1.4-beta",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
     },
     {
       "name": "webview_flutter",
@@ -567,7 +573,7 @@
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.7.0",
+      "rootUri": "file:///C:/Users/lhg02/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.7.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -602,7 +608,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-07-19T00:19:40.848560Z",
+  "generated": "2023-07-24T12:24:43.847216Z",
   "generator": "pub",
-  "generatorVersion": "3.1.0-155.0.dev"
+  "generatorVersion": "3.1.0-333.0.dev"
 }

@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   final googleviewModel= google_MainViewModel(GoogleLogin());
 
   Future<void> uploadUserInfoToFirestore(kakao.User? user) async {
-    if (user == null) return;
+    if (user == null || user.kakaoAccount == null) return;
 
     // 사용자 정보를 Firestore의 'users' 컬렉션에 추가합니다.
     try {
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const OnBoardingPage(),
@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                           await kakaoviewModel.login();
                           if (kakaoviewModel.isLogined) {
                             await uploadUserInfoToFirestore(kakaoviewModel.user); // 사용자 정보 업로드
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const OnBoardingPage(),
@@ -159,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: googleButton(ontap: () async{
                           await googleviewModel.login();
                           if (googleviewModel.isLogined) {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const OnBoardingPage(),
@@ -190,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                           await kakaoviewModel.login();
                           if (kakaoviewModel.isLogined) {
                             await uploadUserInfoToFirestore(kakaoviewModel.user); // 사용자 정보 업로드
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const OnBoardingPage(),
@@ -207,7 +207,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: googleButton(ontap: () async{
                           await googleviewModel.login();
                           if (googleviewModel.isLogined) {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const OnBoardingPage(),
